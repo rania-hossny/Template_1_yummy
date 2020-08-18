@@ -1,0 +1,344 @@
+/* General */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.clear{
+    clear: both;
+}
+a{
+    text-decoration: none;
+}
+button{
+    font-family: 'Varela Round', sans-serif;
+}
+.hover-opacity:hover{
+    opacity: .8;
+}
+
+.pd-y{
+    padding: 120px 0px;
+}
+.section-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.line{
+    width: 60px;
+    height: 5px;
+    background-color: deeppink;
+    display: block;
+    margin: 0 auto 70px auto;
+    
+}
+.section-title{
+    font-size: 25px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+/*header*/
+.header{
+    position: fixed; /*كده هيبقي ورا الhome */
+    z-index: 1; /* علشان اخليها فوق الصوره */
+    width: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.header .logo{
+    width: 40%;
+    float: left;
+    padding: 13px 0px;
+}
+.header .logo img{
+     width: 115px;
+    
+}
+.header .navbar{
+    width: 60%;
+    float: left;
+    list-style: none;
+    text-align: right;
+}
+.navbar li{
+    display: inline-block;
+/*    width: 100px;*/
+    text-align: center;
+}
+.navbar li a{
+    padding: 30px 20px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    }
+.navbar li a::after,
+.navbar li a.active::after{
+    content: "";
+    height: 3px;
+    top: 3px;
+    background-color: deeppink;
+    display: block;
+    transition: width 0.5s;
+}
+.navbar li a::after{
+    width: 0;
+}
+.navbar li a.active::after{
+    width: 100%;
+}
+.navbar li a:hover::after{
+    width: 100%;
+}
+/*home section*/
+.home{
+    background-image: url(../images/recipe-single.jpg);
+    background-size: cover;
+    height: 100vh; /*بارتفاع المكان اللي واقفه عنده */
+    position: relative;
+}
+.overlay{
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.home .title{
+    color: white;
+    font-size: 40px;
+}
+.home-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.btn-learn{
+    width:150px;
+    padding: 15px 0px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: white;
+}
+.btn-learn:hover{
+    background-color: deeppink;
+}
+
+/*About section*/
+.about-items{
+    width: 30%;
+    float: left;
+    text-align: center;
+    border: 1px solid #ded6d6;
+    padding: 50px 20px;
+    
+}
+.about-items.m-item{
+    margin: 0 5%;
+}
+.about-items .icon{
+    color: deeppink;
+    margin-bottom: 10px;
+}
+.about-item-title{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    transition: color 0.5s;
+}
+.about-item-disc{
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #999;
+}
+.about-item-link{
+    text-transform: capitalize;
+    color: deeppink;
+}
+
+.ltr-effect{
+    position: relative;
+}
+.ltr-effect:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #333;
+    z-index: -1;
+    transition: width 0.5s;
+}
+.ltr-effect:hover::after{
+    width: 100%;
+}
+.about-items:hover .about-item-title{
+    color: white;
+}
+/*Recipe*/
+.recipe{
+    background-color: #f9f9f9;
+}
+.recipe-item{
+    width:30%;
+    float: left;
+    margin: 10px;
+    padding: 20px;
+    position: relative;
+}
+.recipe-item img{
+    width: 100%;
+}
+
+.layer-content{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+}
+
+.recipe-item:hover .layer-content{
+    opacity: 1;
+    visibility: visible;
+}
+.layer-info{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:80%;
+    text-align: center;
+}
+.layer-content-title{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.layer-content-price{
+    color: deeppink;
+    font: 25px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.layer-content a i{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: deeppink;
+    line-height: 40px;
+    color: white
+}
+/*Contact*/
+.contact-title, contact-ex{
+    display: block;
+}
+.contact-item{
+    width:30%;
+    float: left;
+    margin: 20px;
+    text-align: center;
+}
+.contact-item i{
+    color: deeppink;
+}
+.contact-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 10px;
+    text-transform: capitalize;
+}
+.contact-ex{
+    color: #999;
+    text-transform: capitalize;
+}
+.contact-content{
+    padding: 25px 0;
+}
+.contact-form{
+    text-align: center;
+    
+}
+.email-name input{
+    width: 31%;
+}
+.subject{   
+    width: 62%;
+    margin: 10px 0px;
+}
+
+.email-name input,.subject{
+    padding: 15px 0;
+    border: none;
+    background-color: #f7f7f7
+}
+.message{
+    width: 62%;
+    border: none;
+    background-color: #f7f7f7;
+}
+
+.email-name input,.subject, .message{
+    border-radius: 4px;
+}
+.email-name input:focus::placeholder{
+    border-color: deeppink;
+}
+.btn-contact{
+    background-color: deeppink;
+    color: white;
+    padding:15px 20px;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+/*Footer*/
+.footer{
+    background-color: black;
+    text-align: center;
+    padding: 60px;
+}
+.footer-links{
+    list-style: none;
+    margin: 20px 0;
+}
+.footer-links li{
+    display: inline-block;
+}
+.footer-links li a{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: deeppink;
+    color: white;
+    margin: 0px 5px;
+}
+.footer-links li a i{
+    line-height: 50px;
+}
+.footer-disc{
+    color: white;
+    text-transform: uppercase;
+}
